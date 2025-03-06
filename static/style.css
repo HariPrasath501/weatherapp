@@ -1,0 +1,163 @@
+/* Root Variables */
+:root {
+    --white: #ffffff;
+    --transp-white: rgba(255, 255, 255, 0.2);
+    --blue-2: #4475ef;
+    --shadow: rgba(3, 46, 87, 0.2);
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url('https://images.pexels.com/photos/3008509/pexels-photo-3008509.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    width: 100vw;
+    height: 100vh; /* Ensures full-screen layout */
+    overflow: hidden; /* Removes vertical scrollbar */
+}
+
+/* Container */
+.container {
+    width: 50%;
+    max-width: 100%;
+    background: var(--transp-white);
+    backdrop-filter: blur(10px);
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 2px solid var(--transp-white);
+    border-radius: 15px;
+    color: rgb(5, 41, 51);
+    min-height: 500px; /* Adjusted to prevent scrolling */
+    height: auto;
+    text-align: center;
+}
+
+/* Form */
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    background-color: transparent;
+    padding: .5rem;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid white;
+    width: 70%;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+}
+
+.btn {
+    padding: .5rem 1rem;
+    border: 2px solid #04009A;
+    cursor: pointer;
+    transition: .3s;
+    color: var(--blue-2);
+    background-color: transparent;
+    border-radius: 0.3em;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background-color: rgb(5, 41, 51);
+    color: #fff;
+}
+
+/* Weather Box (All Elements Inside One Background) */
+.weather {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Temperature and City Name */
+.left {
+    flex: 1;
+    text-transform: uppercase;
+}
+
+.temp {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.city {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Weather Icon */
+.icon img {
+    width: 80px;
+    height: auto;
+}
+
+/* Weather Condition */
+.right {
+    flex: 1;
+    text-align: center;
+}
+
+.condition {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(5, 41, 51);
+}
+
+.date {
+    font-size: 1rem;
+    color: rgb(5, 41, 51);
+}
+
+/* RESPONSIVE DESIGN */
+@media only screen and (max-width: 1000px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .weather {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container {
+        text-align: center;
+        width: 90%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .right, .left {
+        width: 100%;
+    }
+
+    form {
+        flex-direction: column;
+    }
+}
