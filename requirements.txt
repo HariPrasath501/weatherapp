@@ -1,3 +1,4 @@
 google.generativeal
 pymupdf
+gunicorn
 django
